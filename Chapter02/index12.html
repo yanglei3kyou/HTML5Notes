@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档结构元素</title>
+</head>
+<body>
+<article>
+    <!--帖子的头部/-->
+    <header>
+        <h1>学习Andriod,必须先学Java吗</h1>
+        <div>作者: crazystu</div>
+    </header>
+    <p>学习andriod,必须先学习Java吗?andriod上的应用程序只能用Java编写吗?可以用C++吗?</p>
+    <!--帖子的回复部分,用section元素表示-->
+    <section>
+        <!--每个article代表一个回复-->
+        <article>
+            <!--回复的头部-->
+            <header>
+                <h2>还得学习Java</h2>
+                <div>作者: kongyeeku</div>
+            </header>
+            <p>虽然andriod不一定要使用Java开发,还可以选择javascript<br>
+                或者NDK开发,但是Java毕竟是andriod主要的开发语言, <br>
+                因此建议学习andriod之前先学习Java
+            </p>
+        </article>
+        <!--每个article代表一个回复-->
+        <article>
+            <!--回复的头部-->
+            <header>
+                <h2>Java是基础</h2>
+                <div>作者: kuan008</div>
+            </header>
+            <p>Java是基础,学号Java再去学习andriod事半功倍.</p>
+        </article>
+    </section>
+    <footer>
+        以上帖子和回复只代表个人观点,不代表疯狂Java联盟的观点或立场
+    </footer>
+    <!--该aside放在body内部,将作为整个HTML文档的边栏信息-->
+    <aside>
+        <h3>关于楼主</h3>
+        <section>
+            <div>用户组: 编程摸索者</div>
+            <div>注册日期: 2009-10-10</div>
+            <div>上次访问: 2004-10-12</div>
+            <div>最后发表: 2012-3-2</div>
+            <div>发帖数级别: 小试牛刀</div>
+            <div>阅读权限: 30</div>
+        </section>
+    </aside>
+</article>
+<aside>
+    <h3>页面导航</h3>
+    <nav>
+        <ul>
+            <li><a href="#">查看相关内容</a></li>
+            <li><a href="http://www.crazyit.org">返回首页</a></li>
+            <li><a href="http://www.crazyit.org/forum-63-1.html">返回本版</a></li>
+        </ul>
+    </nav>
+</aside>
+</body>
+</html>

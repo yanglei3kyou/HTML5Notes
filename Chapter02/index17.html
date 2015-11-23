@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放API</title>
+</head>
+<body>
+<a href="http://www.fkjava.org">疯狂软件教育</a>
+<img src="images/logo.jpg" alt="crazyit">
+<br>
+<div id="source" style="width: 80px;height: 80px;border: 1px solid black;background-color: #bbb" draggable="true">
+    疯狂教育软件
+</div>
+<script type="text/javascript">
+    var source = document.getElementById("source");
+    source.ondragstart = function(evt) {
+        evt.dateTransfer.setDate("text/plain","www.fkjava.org");
+    }
+    document.ondragover= function(ext) {
+        return false;
+    }
+</script>
+</body>
+</html>
