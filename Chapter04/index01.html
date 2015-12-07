@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Canvas元素</title>
+</head>
+<body>
+<h2>画图入门</h2>
+<canvas id="mc" width="300" height="180" style="border: 1px solid black">
+</canvas>
+<script type="text/javascript">
+    var convas = document.getElementById('mc');
+    var ctx = convas.getContext('2d');
+    ctx.fillStyle = '#f00';
+    ctx.fillRect(30,40,80,100);
+</script>
+</body>
+</html>
