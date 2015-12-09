@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML FileList 对象 与 File 对象</title>
+</head>
+<body>
+    浏览图片: <input type="file" id="images" multiple accept="image/*">
+    <input type="button" value="显示文件" onclick="showDetails();">
+    <script type="text/javascript">
+        var showDetails = function() {
+            var imageEle = document.getElementById("images");
+            var fileList = imageEle.files;
+            for(var i = 0; i < fileList.length;i++) {
+                var file = fileList[i];
+                div = document.createElement("div");
+                div.innerHTML = "第"+(i+1)+"个文件的文件名是:"+file.name+",该文件类型是:"+file.type+",该文件大小: "+file.size;
+                document.body.appendChild(div);
+            }
+        }
+    </script>
+    <hr>
+    浏览文件: <input type="file" id="file1"><br>
+    <div id="result"></div>
+    <input type="button" value="读取文本文件" onclick="readText();"><br>
+    <input type="button" value="读取二进制文件" onclick="readBinary();"><br>
+    <input type="button" value="以DataURL 方式读取" onclick="readURL();"><br>
+    <script type="text/javascript">
+        var reader = null;
+        if (FileReader) {
+            reader = new FileReader();
+        } else {
+            alert("浏览器暂不支持 FileReader")
+        }
+
+        var readText = function() {
+            if (/text\/\w+/.test(document.getElementById('file1').files[0].type)) {
+                reader.readAsText(document.getElementById('file1').files[0],"gbk");
+                reader.onload = function(){
+                    document.getElementById("result").innerHTML = reader.result;
+                }
+
+            } else {
+                alert("你选择的文件不是文本文件!")
+            }
+        }
+
+        var readBinary = function(){
+            reader.readAsBinaryString(document.getElementById('file1').files[0]);
+            reader.onload = function(){
+                document.getElementById("result").innerHTML = reader.result;
+            }
+        }
+
+        var readURL = function() {
+            reader.readAsDataURL(document.getElementById('file1').files[0]);
+            reader.onload = function () {
+                document.getElementById('result').innerHTML = reader.result;
+            }
+        }
+    </script>
+    <hr>
+    浏览文件: <input type="file" id="file2"><br>
+    上传进度: <progress id="pro" value="0"></progress>
+    <div id="result1"></div>
+    <input type="button" value="读取二进制文件" onclick="readBinaryEx();"><br>
+    <script type="text/javascript">
+        var reader = null;
+        if (FileReader){
+            reader = new FileReader();
+        } else {
+            alert("浏览器暂不支持 FileReader");
+        }
+
+        var readBinaryEx = function(){
+            reader.readAsBinaryString(document.getElementById('file2').files[0]);
+            var pro = document.getElementById('pro');
+            pro.max = document.getElementById('file2').files[0].size;
+            reader.onprogress = function(evt){
+                pro.value = evt.loaded;
+            }
+
+        }
+
+    </script>
+</body>
+</html>

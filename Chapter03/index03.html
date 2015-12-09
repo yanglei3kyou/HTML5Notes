@@ -5,6 +5,67 @@
     <title>HTML 5新增的属性与元素</title>
 </head>
 <body>
+<form action="add" id="addForm">
+    物品名: <input type="text" name="name">
+    <input type="submit" value="添加">
+</form>
+物品描述: <textarea name="desc" id="" cols="30" rows="10" form="addForm"></textarea>
 
+<form action="" method="post">
+    用户名: <input type="text" name="name"><br>
+    密码: <input type="password" name="name"><br>
+    <input type="submit" value="注册" formaction="regist">
+    <input type="submit" value="修改" formaction="login">
+</form>
+
+<form action="pro" method="post">
+    用户名: <input type="text" name="name"><br>
+    密码: <input type="password" name="name"><br>
+    <input type="submit" value="GET请求" formmethod="get">
+    <input type="submit" value="POST请求" formmethod="post">
+</form>
+
+<form action="" method="post">
+    用户名: <input type="text" name="name" placeholder="请输入用户名"><br>
+    密码: <input type="password" name="name" placeholder="请输入密码"><br>
+    <input type="submit" value="注册">
+    <input type="submit" value="修改">
+</form>
+<hr>
+<form action="buy">
+    请输入图书: <input type="text" name="name" list="books"><br>
+    <input type="submit" value="购买">
+</form>
+<datalist id="books">
+    <option value="java">疯狂Java讲义</option>
+    <option value="ee">轻量级Java EE 企业应用实战</option>
+    <option value="android">疯狂 Android讲义</option>
+</datalist>
+<hr>
+<form action="do">
+    type='Color'的文本框: <br> <input type="color" name="color"><p>
+    type='date'的文本框: <br> <input type="date" name="date"><p>
+    type='time'的文本框: <br> <input type="time" name="time"><p>
+    type='datetime'的文本框: <br> <input type="datetime" name="datetime"><p>
+    type='datetime-local'的文本框: <br> <input type="datetime-local" name="datetime-local"><p>
+    type='month'的文本框: <br> <input type="month" name="month"><p>
+    type='time'的文本框: <br> <input type="time" name="time"><p>
+    type='week'的文本框: <br> <input type="week" name="week"><p>
+    type='email'的文本框: <br> <input type="email" name="email"><p>
+    type='tel'的文本框: <br> <input type="tel" name="tel"><p>
+    type='url'的文本框: <br> <input type="url" name="url"><p>
+    type='number'的文本框: <br> <input type="number" name="number"><p>
+    type='range'的文本框: <br> <input type="range" min="0" max="100" step="5" name="range"><p>
+    type='search'的文本框: <br> <input type="search" name="search"><p>
+    <input type="submit" value="提交">
+</form>
+<hr>
+<form action="do">
+    <input type="color" id="color1" name="color1">
+    <output name="a" for="color1" onforminput="innerHTML=color1.value;"></output><p>
+    <input type="range" id="range1" name="range1" min="0" max="100" step="5">
+    <output name="b" for="range1" onforminput="innerHTML=range1.value;"></output><p>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

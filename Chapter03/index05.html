@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 5新增的客户端校验</title>
+</head>
+<body>
+<form action="add">
+    图书名: <input type="text" name="name" required><br>
+    图书ISBN: <input type="text" name="isbn" required pattern="\d{3}-\d-\{d}-\d{5}"><br>
+    图书价格: <input type="number" name="price" min="20" max="150" step="5"><br>
+    <input type="submit" value="提交">
+</form>
+<br>
+<hr>
+<br>
+<form action="add">
+    生日: <input type="date" id="birth" name="birth"><br>
+    邮件地址: <input type="email" id="email" name="email"><br>
+    <input type="submit" value="提交" onclick="return check();">
+</form>
+<script type="text/javascript">
+    var check = function(){
+        return commonCheck("birth","生日","字段必须是有效的日期!") && commonCheck("email","邮件","字段必须是符合邮件的格式!");
+    }
+
+    var commonCheck = function(field,fieldName,tip){
+        var targetEle = document.getElementById(field);
+        if (targetEle.value.trim() == ""){
+            alert(fieldName+"字段必须填写!");
+            return false;
+        }
+        else if (!targetEle.checkValidity()) {
+            alert(fieldName+tip);
+            return false;
+        }
+        return true;
+    }
+</script>
+<br>
+<hr>
+<br>
+<form action="add">
+    图书名: <input type="text" name="name" required><br>
+    图书ISBN: <input type="text" name="isbn" required pattern="\d{3}-\d-\{d}-\d{5}"><br>
+    图书价格: <input type="number" name="price" min="20" max="150" step="5"><br>
+    <input type="submit" value="提交" onclick="checkEx();">
+</form>
+<script type="text/javascript">
+    var checkEx = function(){
+        if (!document.getElementById('name').checkValidity()) {
+            document.getElementById('name').setCustomValidity("图书名是必须填写的EE!");
+        }
+
+        if (!document.getElementById('isbn').checkValidity()) {
+            document.getElementById('isbn').setCustomValidity("图书ISBN不符合规定!");
+        }
+
+        if (!document.getElementById('price').checkValidity()) {
+            document.getElementById('price').setCustomValidity("图书价格不符合规定的!");
+        }
+    }
+
+</script>
+</body>
+</html>
