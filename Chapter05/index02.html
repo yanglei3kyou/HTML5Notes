@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Javascript脚本控制媒体播放</title>
+    <script type="text/javascript">
+        var musics = [
+            "res/demo1.ogg",
+            "res/bomb.ogg",
+            "res/arrow.ogg",
+            "res/love.ogg",
+            "res/song.ogg"
+        ];
+
+        var index = 0;
+        var playType;
+        window.onload = function(){
+            var typeSel = document.getElementById('typeSel');
+            typeSel.onchange = function(){
+                window.playType = typeSel.value;
+            }
+
+            var player = document.getElementById('player');
+            player.src = musics[index];
+            player.onended = function(){
+                if (playType == "random"){
+                    index = Math.floor(Math.random()*musics.length);
+                    player.src = musics[index];
+                }
+                else {
+                    player.src = musics[++index%musics.length];
+                }
+                player.play();
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>音乐播放器</h2>
+<select name="" id="typeSel" style="width: 160px">
+    <option value="sequence">顺序播放</option>
+    <option value="random">随机播放</option>
+</select><br>
+<audio src="" id="player" controls>
+    您的浏览器不支持audio元素
+</audio>
+</body>
+</html>
