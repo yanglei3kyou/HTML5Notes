@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雪花飘飘</title>
+</head>
+<body>
+<h2>雪花飘飘</h2>
+<canvas id="mc" width="420" height="280" style="border: 1px solid black"></canvas>
+<script type="text/javascript">
+    function createFlower(context,n,dx,dy,size,length){
+        context.beginPath();
+        context.moveTo(dx,dy+size);
+        var dig = 2 * Math.PI /2;
+        for (var i = 1;i < n+1;i++){
+            var ctrlX = Math.sin((i-0.5)*dig)*length+dx;
+            var ctrlY = Math.cos((i-0.5)*dig)*length+dy;
+
+            var x = Math.sin(i*dig)*size+dx;
+            var y = Math.cos(i*dig)*size+dy;
+
+            context.quadraticCurveTo(ctrlX,ctrlY,x,y);
+        }
+        context.closePath();
+    }
+
+    snowPos = [
+        {x : 20 , y : 4},
+        {x : 60 , y : 4},
+        {x : 100 , y : 4},
+        {x : 140 , y : 4},
+        {x : 180 , y : 4},
+        {x : 220 , y : 4},
+        {x : 260 , y : 4},
+        {x : 300 , y : 4},
+        {x : 340 , y : 4},
+        {x : 380 , y : 4}
+    ];
+
+    function fall(context){
+        context.fillStyle = '#000';
+        context.fillRect(0,0,420,280);
+
+        context.fillStyle = '#fff';
+        for (var i = 0,len = snowPos.length;i< len;i++){
+            context.save();
+            context.translate(snowPos[i].x,snowPos[i].y);
+            context.rotate((Math.random() * 6 - 3)*Math.PI/10);
+            snowPos[i].y += Math.random() * 8;
+            if (snowPos[i].y > 280) {
+                snowPos[i].y = 4;
+            }
+
+            createFlower(context,6,0,0,5,8);
+            context.fill();
+            context.restore();
+        }
+    }
+
+    var convas = document.getElementById('mc');
+    var ctx = convas.getContext('2d');
+    setInterval("fall(ctx)",200);
+</script>
+</body>
+</html>

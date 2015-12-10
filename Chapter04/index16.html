@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位图裁剪</title>
+</head>
+<body>
+<h2>位图裁剪</h2>
+<canvas id="mc" width="400" height="280" style="border: 1px solid black"></canvas>
+<script type="text/javascript">
+    var canvas = document.getElementById('mc');
+    var ctx = canvas.getContext('2d');
+    var dig = Math.PI / 20;
+    var count = 0;
+
+    var image = new Image();
+    image.src = "images/android.png";
+    image.onload = function(){
+        setInterval("addRadial();",150);
+    }
+
+    var addRadial = function(){
+        ctx.save();
+        ctx.beginPath();
+
+        ctx.arc(200,130,200,0,dig*++count,false);
+        ctx.lineTo(200,130);
+
+        ctx.closePath();
+        ctx.clip();
+
+        ctx.drawImage(image,124,20);
+        ctx.restore();
+    }
+</script>
+</body>
+</html>

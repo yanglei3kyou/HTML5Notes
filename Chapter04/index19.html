@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位图输出</title>
+</head>
+<body>
+<h2>位图输出</h2>
+<canvas id="mc" width="360" height="280" style="border: 1px solid black"></canvas>
+<img src="" alt="图片输出" id="result">
+<script type="text/javascript">
+    var canvas = document.getElementById('mc');
+    var ctx = canvas.getContext('2d');
+    ctx.save();
+    ctx.translate(30,20);
+    var image = new Image();
+    image.src = "images/wjc.gif";
+    image.onload = function(){
+        imgPattern = ctx.createPattern(image,"repeat");
+        ctx.fillStyle = imgPattern;
+
+        ctx.fillRect(0,0,160,80);
+        ctx.restore();
+
+        ctx.translate(280,160);
+        ctx.beginPath();
+
+        ctx.arc(0,0,80,0,Math.PI*2,true);
+        ctx.closePath();
+        ctx.lineWidth = 12;
+
+        ctx.strokeStyle = imgPattern;
+        ctx.stroke();
+
+        document.getElementById("result").src = canvas.toDataURL("image/png");
+
+    }
+
+</script>
+</body>
+</html>

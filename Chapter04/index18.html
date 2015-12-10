@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片高亮显示</title>
+</head>
+<body>
+<h2>图片高亮</h2>
+<canvas id="mc" width="400" height="280" style="border: 1px solid black"></canvas>
+<script type="text/javascript">
+    var canvas = document.getElementById('mc');
+    var ctx = canvas.getContext('2d');
+
+    var image = new Image();
+    image.src = "images/android.png";
+    image.onload = function(){
+        ctx.drawImage(image,30,20);
+        lightImage(image,220,20,1.6);
+    }
+
+    var lightImage = function(image,x,y,light){
+        ctx.drawImage(image,x,y);
+        var imgData = ctx.getImageData(x,y,image.width,image.height);
+        for (var i = 0,len = imgData.data.length;i<len;i+=4){
+            imgData.data[i+0] = imgData.data[i+0]*light;
+            imgData.data[i+1] = imgData.data[i+1]*light;
+            imgData.data[i+2] = imgData.data[i+2]*light;
+        }
+        ctx.putImageData(imgData,x,y);
+    }
+</script>
+</body>
+</html>
