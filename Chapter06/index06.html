@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 30px;
+            background-color: #eee;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        div[id]{
+            background-color: #aaa;
+        }
+        div[id*=aa]{
+            background-color: #999;
+        }
+        div[id^=xx]{
+            background-color: #555;
+            color: #fff;
+        }
+        div[id=xx]{
+            background-color: #111;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div>没有任何属性的div元素</div>
+<div id="a">带id 的div元素</div>
+<div id="zzxx">id 属性值包含xx 子字符串的 div元素</div>
+<div id="xxyy">id 属性值以xx 开头的div 元素</div>
+<div id="xx">id 属性为 xx 的 div 元素</div>
+</body>
+</html>
