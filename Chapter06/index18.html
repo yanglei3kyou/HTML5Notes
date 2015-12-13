@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加符号</title>
+    <style type="text/css">
+        div>div {
+            quotes: "<<" ">>";
+        }
+        div>div:before {
+            content: open-quote;
+        }
+        div>div:after {
+            content: close-quote;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>疯狂 Java 讲义</div>
+    <div>疯狂 Android 讲义</div>
+    <div>轻量级 Java EE 企业应用实战</div>
+</div>
+</body>
+</html>
