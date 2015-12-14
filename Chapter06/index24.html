@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nth-child</title>
+    <style type="text/css">
+        li:nth-child(odd){
+            margin: 10px;
+            border: 2px dotted black;
+        }
+        li:nth-child(even){
+            padding: 4px;
+            border: 1px solid black;
+        }
+        li:nth-last-child(3n+1){
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li id="java">疯狂Java讲义</li>
+    <li id="javaee">轻量级Java EE 企业应用实战</li>
+    <li id="ajax">疯狂Ajax讲义</li>
+    <li id="xml">疯狂XML讲义</li>
+    <li id="ejb">经典Java EE企业应用实战</li>
+    <li><span id="android">疯狂Android讲义</span></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:type</title>
+    <style type="text/css">
+        span{
+            display: block;
+            padding: 5px;
+        }
+        span:first-of-type{
+            border: 1px solid black;
+        }
+        span:last-of-type{
+            background-color: #aaa;
+        }
+        span:nth-of-type(2){
+            color: #888;
+        }
+        span:nth-last-of-type(2){
+            font-weight: bold;
+        }
+        span:nth-of-type(2n+1){
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div>www.crazyit.org</div>
+<span>www.fkjava.org</span>
+<span>www.facejava.org</span>
+<span>疯狂Java联盟</span>
+<span>疯狂教育中心</span>
+<hr>
+<div>
+    <div id="java">疯狂Java讲义</div>
+    <div id="javaee">轻量级Java EE企业应用实战</div>
+    <span id="ajax">疯狂Ajax讲义</span>
+    <span id="xml">疯狂XML讲义</span>
+    <span id="ejb">疯狂Java EE企业应用实战</span>
+    <span id="android">疯狂Android讲义</span>
+    <div id="struts">Struct 2.1权威指南</div>
+</div>
+</body>
+</html>

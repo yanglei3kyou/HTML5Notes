@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI元素状态伪类选择器</title>
+    <style type="text/css">
+        td{
+            border: 1px solid black;
+            padding: 4px;
+        }
+        tr:hover{
+            background-color: #aaa;
+        }
+        input:active{
+            background-color: blue;
+        }
+        :focus{
+            text-decoration: underline;
+        }
+        :enabled{
+            font-family: "黑体";
+            font-weight: bold;
+            font-size: 14pt;
+        }
+        :disabled{
+            font-family: "隶书";
+            font-size: 14pt;
+        }
+        :checked{
+            outline: red solid 5px;
+        }
+        :default{
+            outline: #bbb solid 5px;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 400px;border-collapse: collapse">
+        <tr>
+            <td>疯狂Java讲义</td>
+        </tr>
+        <tr>
+            <td>轻量级Java EE企业应用实战</td>
+        </tr>
+        <tr contenteditable="true">
+            <td>疯狂Android讲义</td>
+            <td>89</td>
+        </tr>
+    </table>
+    <button disabled>不可用的按钮</button>
+    <input type="text" disabled value="不可用的文本框">
+    <button>可用的按钮</button>
+    <input type="text" value="可用的文本框">
+    男: <input type="radio" value="male" name="gender">
+    女: <input type="radio" value="female" name="gender">
+    未知: <input type="radio" value="unknown" name="gender">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new document</title>
+    <style type="text/css">
+        div>h2{
+            counter-increment: categorycounter;
+            counter-reset: subcounter;
+        }
+        div>div{
+            counter-increment: subcounter;
+        }
+        div>h2:before{
+            content: counter(categorycounter,georgian)'.';
+            font-size: 20pt;
+            font-weight: bold;
+        }
+        div>div:before{
+            content: '第'counter(subcounter,cjk-ideographic)'本';
+            font-size: 14pt;
+            font-weight: bold;
+            margin-left: 24pt;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>疯狂Java体系图书</h2>
+        <div>疯狂Java讲义</div>
+        <div>疯狂Android讲义</div>
+        <div>轻量级 Java EE企业应用开发</div>
+        <h2>其它图书</h2>
+        <div>Struct 2.1权威指南</div>
+        <div>Javascript 权威指南</div>
+    </div>
+</body>
+</html>
