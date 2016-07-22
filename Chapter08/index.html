@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试OC</title>
+    <script type="text/javascript">
+        function ocCallTouch(){
+            alert("I'm touched");
+        }
+
+        function  ocCallTouchAndPara(greeting){
+            alert(greeting);
+        }
+
+        function jsCallObjectiveC() {
+            var iFrame;
+            iFrame = document.createElement("iframe");
+            iFrame.setAttribute("src","ios://theJumpLabel");
+            iFrame.setAttribute("style","display:none");
+            iFrame.setAttribute("height","0px");
+            iFrame.setAttribute("width","0px");
+            iFrame.setAttribute("frameborder","0");
+            document.body.appendChild(iFrame);
+            iFrame.parentNode.removeChild(iFrame);
+            iFrame = null;
+        }
+    </script>
+</head>
+<body>
+<input type="submit" value="提交" onclick="jsCallObjectiveC()">
+</body>
+</html>

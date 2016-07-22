@@ -5,6 +5,19 @@
     <title>背景相关属性</title>
 </head>
 <body>
-
+background-color: #aaa
+<!--灰色背景-->
+<div style="background-color: #aaa">测试文字</div>
+<!--以默认样式指定背景图片,将会在横向,纵向上平铺-->
+<div style="background-image: url('res/wjc.gif');">测试文字</div>
+<!--不平铺的背景图片-->
+<div style="background: url('res/wjc.gif') no-repeat;">测试文字</div>
+<!--仅横向平铺的背景图片-->
+<div style="background: url('res/wjc.gif') repeat-x;">测试文字</div>
+<!--不平铺的北京图片,并指定背景图片的位置-->
+<div style="background: url(res/wjc.gif) no-repeat;">测试文字</div>
+<div>测试文字</div>
+<!--不平铺的背景图片,并指定背景图片的位置-->
+<div style="background: url('res/wjc.gif') no-repeat center bottom;">测试文字LL</div>
 </body>
 </html>

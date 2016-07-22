@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS属性</title>
+    <style type="text/css">
+        /*
+            CSS属性分类: 可继承属性、不可继承属性
+        可继承属性:
+        一般是文件控制属性
+        visibility 可见的
+        cursor 光标样式
+
+        内联标签可继承
+        line-height 行高
+        color 文字颜色
+        font-family 文字字体
+        font-size 文字大小
+        font-weight 文字粗细
+        text-decoration 下划线
+
+        块级
+        text-align 文字方向
+        text-indent 文字缩进
+
+        列表标签
+        list-style
+
+
+        不可继承属性:
+        一般是区块属性
+        display 显示模式
+        margin
+        border
+        padding
+        background 背景
+        overflow
+
+
+
+        */
+        /*body{*/
+            /*font-size: 30px;*/
+            /*color: red;*/
+            /*font-weight: bolder;*/
+        /*}*/
+
+        /*div{*/
+            /*background-color: red;*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+            /*!*display: none;*!*/
+            /*visibility: hidden;*/
+        /*}*/
+
+        span {
+            background-color: blue;
+            width: 300px;
+            height: 200px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .one {
+            text-indent: 3%;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        #x11{
+            background-color: red;
+            width: 90px;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <!--<div>1111111</div>-->
+    <!--<span>222222</span>-->
+    <!--<p>3333333</p>-->
+
+    <div>
+        <span>12222222222222222</span>
+    </div>
+    <p class="one">1212121212121212</p>
+    <p>1212121212121212</p>
+    <p>1212121212121212</p>
+    <p>1212121212121212</p>
+    <p>1212121212121212</p>
+    <br>
+    <a href="https://www.baidu.com">百度一下</a>
+    <br>
+<ul>
+    <li>222222</li>
+    <li>222222</li>
+    <li>222222</li>
+    <li>222222</li>
+    <li>222222</li>
+</ul>
+
+<div id="x11">444444444444444444444444444444</div>
+</body>
+</html>

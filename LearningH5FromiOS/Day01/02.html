@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签的类型</title>
+    <style type="text/css">
+
+
+        /*
+            块级标签
+            独占一行,可以改变高度和宽度
+                div p h1 h2 ul li
+          */
+
+        div {
+            background-color: red;
+            display: none;
+        }
+
+        p{
+            background-color: #00FF00;
+            width: 100px;
+            height: 50px;
+        }
+
+        /*
+            行内标签(内联标签)
+            多个标签占同一行
+            不能改变宽度、高度
+
+            span a label
+        */
+        span{
+            background-color: yellow;
+            display: block;
+        }
+
+        /*
+            行内-块级标签
+            多个标签占同一行
+            可以改变高度、宽度
+
+            input button
+        */
+        input{
+            width: 200px;
+            height: 100px;
+        }
+
+        /*
+            display属性 改变标签的显示样式
+            none 隐藏
+            block 使标签变成块级标签
+            inline 使标签变成行内标签
+            inline-block 使标签变成行内块级标签
+        */
+    </style>
+</head>
+<body>
+
+    <div>1111111</div>
+    <div>1111111</div>
+    <div>1111111</div>
+    <div>1111111</div>
+
+    <br>
+
+    <p>dfadfadfadf</p>
+
+    <span>dsdsd</span>
+    <span>dsdsd</span>
+    <span>dsdsd</span>
+    <span>dsdsd</span>
+    <br>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+</body>
+</html>

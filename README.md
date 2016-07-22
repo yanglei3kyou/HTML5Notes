@@ -1,5 +1,4 @@
 # HTML5 Notes
-<br>
 Some notes of learning about HTML5, according to the Book "疯狂 HTML 5/CSS 3/JavaScript 讲义".
 ---
 <br> 第一部分
