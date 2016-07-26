@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS对象</title>
+</head>
+<body>
+<script>
+    // this 代表所在的当前对象
+    var dog = {
+        name : 'WangCai',
+        height : 1.55,
+        age : 15,
+        friend : ['lulu', 'XiXi'],
+
+        run: function () {
+            console.log(this.name,'Dog is Running ~ ');
+        },
+
+        eat: function () {
+            console.log(this.name, 'Dog is Eating ~ ');
+        }
+    };
+
+    console.log(dog);
+
+    console.log(dog.name);
+
+    for (var pname in dog) {
+        console.log(pname, dog[pname]);
+    }
+
+    dog.run();
+    dog.eat();
+
+</script>
+</body>
+</html>

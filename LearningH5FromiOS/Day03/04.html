@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量产生对象2</title>
+</head>
+<body>
+<script>
+    var Dog = function () {
+        this.name = null;
+        this.height = null;
+        this.age = null;
+
+        this.eat = function () {
+            console.log('---Eat---');
+        }
+
+        this.run = function () {
+            console.log('---Run---');
+        }
+    };
+
+    var dog1 = new  Dog();
+    dog1.name = 'WangCai';
+    dog1.height = 1.55;
+    dog1.age = 1;
+    var dog2 = new  Dog();
+    dog2.name = 'lulu';
+    dog2.height = 1.50;
+    dog2.age = 12;
+    console.log(dog1,dog2);
+
+
+
+</script>
+</body>
+</html>
