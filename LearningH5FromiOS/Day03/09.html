@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+</head>
+<body>
+<img id="imgLogo" src="http://img0.bdstatic.com/img/image/imglogo-r.png" alt="">
+<br>
+<input type="text" id="textInput" value="Hello">
+<script>
+    var img = document.getElementById('imgLogo');
+    img.onmousemove = function () {
+        console.log('在图片上移动~  ');
+    }
+
+    img.onmouseover = function () {
+        console.log('进入图片~  ');
+    }
+
+    img.onmouseout = function () {
+        console.log('离开图片~  ');
+    }
+
+    var input = document.getElementById('textInput');
+    input.onfocus = function () {
+        input.style.outline = 'none';
+//        input.style.width = '300px';
+    }
+
+    input.onselect = function () {
+        alert(input.value);
+    }
+</script>
+</body>
+</html>

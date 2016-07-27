@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<img class="icon" src="img/icon_01.png" alt="">
+<p></p>
+<button class="pre" onclick="pre();">上一张</button>
+<button class="next" onclick="next();">下一张</button>
+<script src="script/index.js"></script>
+<script type="text/javascript">
+    var icon = document.getElementsByClassName('icon')[0];
+    var maxImgCount = 9;
+    var minImgCount = 1;
+    var currentImg = minImgCount;
+
+
+    // 点击上一张
+    function pre() {
+        if (currentImg == minImgCount) {
+            currentImg = maxImgCount;
+            icon.src = 'img/icon_0'+currentImg+'.png';
+        } else {
+            currentImg--;
+            icon.src = 'img/icon_0'+currentImg+'.png';
+        }
+    }
+
+    // 点击下一张
+    function next() {
+        if (currentImg == maxImgCount) {
+            currentImg = minImgCount;
+            icon.src = 'img/icon_0'+currentImg+'.png';
+        } else {
+            currentImg++;
+            icon.src = 'img/icon_0'+currentImg+'.png';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换图片</title>
+
+
+</head>
+<body>
+<br>
+<img name="imgName" class="imgClass" src="http://img0.bdstatic.com/img/image/imglogo-r.png" alt="Logo" id="imageLogo">
+<br>
+<button>改变</button>
+</body>
+
+<script>
+    var img = document.getElementById('imageLogo');
+    var isChange = false;
+
+    var button = document.getElementsByTagName('button')[0];
+    button.onclick = function () {
+        // lastIndexOf 如果有,返回任一正数,如果没有,返回-1
+        if (isChange == false) {
+            img.src = 'http://cd.focus.cn/upload/photos/111600/fV83oI7x.jpg';
+        } else {
+            img.src = 'http://img0.bdstatic.com/img/image/imglogo-r.png';
+        }
+        isChange = !isChange;
+    }
+</script>
+</html>

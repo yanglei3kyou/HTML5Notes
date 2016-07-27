@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+</head>
+<body>
+<img id="imgId" src="http://img0.bdstatic.com/img/image/imglogo-r.png" alt="">
+<p id="pIdGG">dddddddd</p>
+<p></p>
+<button id="buttonId">隐藏</button>
+
+<script>
+    var img = document.getElementById('imgId');
+    var p = document.getElementById('pIdGG');
+    var button = document.getElementById('buttonId');
+
+    button.onclick = function () {
+        if (button.innerHTML == '隐藏') {
+            button.innerHTML = '显示';
+            img.style.display = 'none';
+            p.style.display = 'none';
+        } else {
+            button.innerHTML = '隐藏';
+            img.style.display = 'inline-block';
+            p.style.display = 'block';
+        }
+    };
+
+</script>
+</body>
+</html>

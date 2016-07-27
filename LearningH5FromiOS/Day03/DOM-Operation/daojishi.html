@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <style type="text/css">
+        img {
+            margin: 50px;
+            display: none;
+        }
+
+        .time {
+            margin: 50px;
+            font-size: 200px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<img src="img/img_03.jpg" alt="">
+<div class="time">10</div>
+
+<script type="text/javascript">
+    var div = document.getElementsByClassName('time')[0];
+    var img = document.getElementsByTagName('img')[0];
+
+    var second = 10;
+    // 计时器 js秒基本单位为毫秒
+    var timer = setInterval(function () {
+        second--;
+        if (second < 0) {
+            img.style.display = 'block';
+            div.style.display = 'none';
+            // 清除计时器
+            clearInterval(timer);
+        } else {
+            div.innerHTML = div.innerHTML-1;
+        }
+
+        console.log(div.innerHTML, typeof div.innerHTML);
+
+    },1000);
+
+
+</script>
+</body>
+</html>
