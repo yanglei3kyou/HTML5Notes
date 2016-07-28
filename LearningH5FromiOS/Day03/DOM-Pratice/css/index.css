@@ -1,0 +1,67 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#tab {
+    width: 498px;
+    height: 130px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+#tab-header {
+    height: 36px;
+    background-color: #F7F7F7;
+    position: relative;
+}
+
+#tab-header ul {
+    width: 501px;
+    position: absolute;
+    left: -1px;
+}
+
+#tab-header ul li {
+    float: left;
+    width: 98px;
+    height: 36px;
+    padding: 0px 1px;
+    line-height: 36px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#tab-header ul li.select {
+    background-color: white;
+    border-bottom: 0px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 0px;
+}
+
+#tab-header ul li:hover {
+    color: orange;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#tab #tab-body .dom {
+    display: none;
+}
+
+#tab #tab-body .dom ul li {
+    float: left;
+    width: 240px;
+    margin-left: 4px;
+    margin-top: 15px;
+}
