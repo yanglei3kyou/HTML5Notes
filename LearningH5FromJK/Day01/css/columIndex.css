@@ -1,0 +1,7 @@
+div {
+    color: red;
+    column-count: 3;
+    column-rule: 5px outset blue;
+    /*-webkit-column-count: 3;*/
+    /*-webkit-column-rule: 5px outset blue;*/
+}
